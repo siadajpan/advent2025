@@ -9,7 +9,10 @@ class TextBaseSolution:
 
     def _read_data(self, split_by: str = "\n") -> list[str]:
         with open(self.file_name, "r") as f:
-            return f.read().split(split_by)
+            arr = f.read().split(split_by)
+            if arr[-1] == "":
+                arr.pop()
+            return arr
     
     def solve(self) -> tuple[str, str]:
         raise NotImplementedError
